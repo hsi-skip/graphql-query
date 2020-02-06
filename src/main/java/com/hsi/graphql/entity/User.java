@@ -1,25 +1,19 @@
 package com.hsi.graphql.entity;
 
-import java.util.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.Getter;
-import lombok.Setter;
-
-@Setter
-@Getter
 @Entity
-@Table(name = "USERS")
+@Table(name="Users")
 public class User {
-
 	@Id
-	private long id;
-	private String name;
-	private String address;
-	private Date birthday;
+    private long id;
+    private String name;
+    private String phone;
+    private String email;
+    private String address;  
+    
 	public long getId() {
 		return id;
 	}
@@ -32,17 +26,23 @@ public class User {
 	public void setName(String name) {
 		this.name = name;
 	}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 	public String getAddress() {
 		return address;
 	}
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public Date getBirthday() {
-		return birthday;
-	}
-	public void setBirthday(Date birthday) {
-		this.birthday = birthday;
-	}
-	
+
 }
