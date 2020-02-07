@@ -1,19 +1,44 @@
 package com.hsi.graphql.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+
+import com.sun.istack.NotNull;
 
 @Entity
 @Table(name="Users")
 public class User {
-	@Id
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+	
+	@NotNull
+	@NotBlank
     private String name;
+	
+	@NotNull
+	@Min(10)
     private String phone;
+	
+	@NotNull
     private String email;
     private String address;  
     
+	public User() {
+	}
+    
+	public User(String name, String phone, String email, String address) {
+		super();
+		this.name = name;
+		this.phone = phone;
+		this.email = email;
+		this.address = address;
+	}
+	
 	public long getId() {
 		return id;
 	}
