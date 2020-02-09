@@ -1,2 +1,2 @@
-# graphql-query
-Spring Boot with GraphQL Query
+GraphGl with spring boot
+A sample application with GraphQL and Spring Boot

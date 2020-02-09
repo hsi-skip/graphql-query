@@ -1,16 +1,21 @@
-schema{
-	query: Query
+type User{
+    long id : Long
+    name : String
+    phone : String
+    email : String
+    address : String
 }
 
 type Query{
-	getAllPerson : [User]
-	findPerson(email : String) : User
+	save(user : User) : [User]
+    getUserById(id : ID) : [User]
+    getUserByEmail(email : String) : [User]
+    getAllUsers : [User]
 }
 
-type User{
-	id : Long
-	name : String
-	phone : String
-	email : String
-	address : String
+type Mutation{
+	deleteUser(User user) : [User];
 }
+
+
+
