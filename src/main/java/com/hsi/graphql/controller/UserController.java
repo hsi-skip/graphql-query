@@ -69,8 +69,8 @@ public class UserController {
 		return "record inserted " + persons.size();
 	}
 
-	@GetMapping("/findAllPerson")
-	public List<User> getPersons() {
+	@GetMapping("/findAllUsers")
+	public List<User> getAllUsers() {
 		return (List<User>) userRepository.findAll();
 	}
 

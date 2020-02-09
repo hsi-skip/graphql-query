@@ -15,13 +15,19 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	UserRepository userRepository;
 	
+	@Override
 	public List<User> getAllUsers(){
 		return userRepository.findAll();
 	}
-
+	
 	@Override
-	public void saveAll(List<User> lstUser) {
-		userRepository.saveAll(lstUser);
+	public User getUserByEmail(String email) {
+		return userRepository.findByEmail(email);
+	}
+	
+	@Override
+	public void delete(User user) {
+		userRepository.delete(user);
 	}
 	
 }

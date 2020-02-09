@@ -31,8 +31,9 @@ public class User {
 	public User() {
 	}
     
-	public User(String name, String phone, String email, String address) {
+	public User(long id, String name, String phone, String email, String address) {
 		super();
+		this.id = id;
 		this.name = name;
 		this.phone = phone;
 		this.email = email;

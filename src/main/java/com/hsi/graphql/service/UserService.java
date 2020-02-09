@@ -7,6 +7,11 @@ import com.hsi.graphql.entity.User;
 public interface UserService{
 
 	public List<User> getAllUsers();
-	public void saveAll(List<User> lstUser);
+	
+	public User getUserByEmail(String email);
+
+	public void delete(User user);
+	
+	
 
 }
