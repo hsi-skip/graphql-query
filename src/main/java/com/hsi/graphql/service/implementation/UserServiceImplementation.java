@@ -1,7 +1,6 @@
-package com.hsi.graphql.service.impl;
+package com.hsi.graphql.service.implementation;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,7 +10,7 @@ import com.hsi.graphql.repository.UserRepository;
 import com.hsi.graphql.service.UserService;
 
 @Service
-public class UserServiceImpl implements UserService {
+public class UserServiceImplementation implements UserService {
 	
 	@Autowired
 	UserRepository userRepository;
@@ -21,17 +20,25 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public Optional<User> getUserById(long id) { return userRepository.findById(id); }
+	public User getUserById(long id) { 
+		return userRepository.findById(id); 
+	}
 
 	@Override
-	public Optional<User> getUserByEmail(String email) { return userRepository.findByEmail(email); }
+	public User getUserByEmail(String email) { 
+		return userRepository.findByEmail(email); 
+	}
 
 	@Override
-	public List<User> getAllUsers() { return (List<User>)userRepository.findAll(); }
+	public List<User> getAllUsers() { 
+		return userRepository.findAll(); 
+	}
 
 	@Override
-	public void delete(User user) {
-		userRepository.delete(user);
+	public boolean delete(long id) { 
+		userRepository.delete(id);
+		
+		return true;
 	}
 	
 }

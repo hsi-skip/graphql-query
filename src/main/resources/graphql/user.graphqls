@@ -1,5 +1,5 @@
 type User{
-    long id : Long
+    id : ID
     name : String
     phone : String
     email : String
@@ -7,15 +7,10 @@ type User{
 }
 
 type Query{
-	save(user : User) : [User]
-    getUserById(id : ID) : [User]
-    getUserByEmail(email : String) : [User]
     getAllUsers : [User]
+    
 }
 
 type Mutation{
-	deleteUser(User user) : [User];
+	delete(id:ID) : Boolean 
 }
-
-
-
