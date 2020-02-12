@@ -8,12 +8,12 @@ public interface UserService{
 
 	public User save(User user);	
 
+	public void delete(long id);
+	
 	public User getUserById(long id);
 
 	public User getUserByEmail(String email);
 
 	public List<User> getAllUsers();
-
-	public boolean delete(long id);
 
 }

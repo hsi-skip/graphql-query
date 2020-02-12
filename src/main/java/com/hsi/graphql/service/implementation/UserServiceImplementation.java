@@ -20,6 +20,11 @@ public class UserServiceImplementation implements UserService {
 	}
 
 	@Override
+	public void delete(long id) { 
+		userRepository.delete(id);
+	}
+	
+	@Override
 	public User getUserById(long id) { 
 		return userRepository.findById(id); 
 	}
@@ -34,11 +39,6 @@ public class UserServiceImplementation implements UserService {
 		return userRepository.findAll(); 
 	}
 
-	@Override
-	public boolean delete(long id) { 
-		userRepository.delete(id);
-		
-		return true;
-	}
+
 	
 }
